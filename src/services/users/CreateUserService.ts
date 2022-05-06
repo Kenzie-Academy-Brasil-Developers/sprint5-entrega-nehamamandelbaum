@@ -1,4 +1,4 @@
-import User from "../../models/User"
+import User from "../../entities/User"
 import {hash} from "bcryptjs"
 import AppDataSource from "../../data-source"
 import AppError from "../../errors/AppError"

@@ -3,6 +3,7 @@ import CreateUserService from "../services/users/CreateUserService"
 import ListUsersService from "../services/users/ListUsersService"
 import GetUserService from "../services/users/GetUserService"
 import UpdateUserService from "../services/users/UpdateUserService"
+import DeleteUserService from "../services/users/DeleteUserService"
 
 export default class UsersController {
   static async store(request: Request, response: Response) {
@@ -46,5 +47,15 @@ export default class UsersController {
     const updatedUser = await updateUserService.execute({id, name, email, age})
 
     return response.json(updatedUser)
+  }
+
+  static async delete(request: Request, response: Response) {
+    const {id} = request.params
+
+    const deleteUserService = new DeleteUserService()
+
+    const deleteUser = await deleteUserService.execute({id})
+
+    return response.status(204).json()
   }
 }
