@@ -18,7 +18,7 @@ class User {
   email: string
 
   @Column()
-  Password: string
+  password: string
 
   @Column()
   age: number
