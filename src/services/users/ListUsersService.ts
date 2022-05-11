@@ -1,4 +1,4 @@
-import User from "../../entities/User"
+import {User} from "../../entities/User"
 import AppDataSource from "../../data-source"
 
 export default class ListUsersService {
