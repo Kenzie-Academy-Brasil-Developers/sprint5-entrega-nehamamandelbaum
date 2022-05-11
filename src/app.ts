@@ -16,13 +16,15 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     })
   }
 
+  console.error("Internal server error", err)
+
   return response.status(500).json({
     status: "Error",
     message: "Internal Server Error",
   })
 })
 
-app.listen(3333, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log("Server running on port 3333")
 })
 
